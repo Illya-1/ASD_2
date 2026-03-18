@@ -1,6 +1,6 @@
 ﻿namespace ASD_2;
 
-public class Parser
+public static class Parser
 {
     public static void ArrayToFile(string filename, (int user, int reverses)[] results)
     {
@@ -9,7 +9,6 @@ public class Parser
         for (int i = 1; i < results.Length; i++)
         {
             lines[i] = $"{results[i].user} {results[i].reverses}";
-            //Console.WriteLine(lines[i]);
         }
         
         File.WriteAllLines(filename, lines);
@@ -39,8 +38,7 @@ public class Parser
                     array[i, j] = 0;
                     continue;
                 }
-
-                //Console.WriteLine($"arrlen[i, j]: {array.GetLength(0)}/{array.GetLength(1)}[{i}, {j}] | line[j-1]: {line.Length}[{j-1}]");
+                
                 array[i, j] = int.Parse(line[j]);
             }
         }

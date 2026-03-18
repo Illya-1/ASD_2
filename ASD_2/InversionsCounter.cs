@@ -76,7 +76,6 @@ public static class InversionsCounter
         int j = 1;
         while (j < array.GetLength(1))
         {
-            //Console.WriteLine($"j = {j}");
             if (array[x, j] > array.Length || array[x, j] < 1)
             {
                 throw new ArgumentOutOfRangeException(nameof(array));
@@ -92,7 +91,6 @@ public static class InversionsCounter
             {
                 if (i != x)
                 {
-                    //Короче, тут вместо i было x, по идее я пофиксил, но хз, может я сейчас всё сломал нахуй. Посмотрим
                     (array[i, j], array[i, array[x, j]]) = (array[i, array[x, j]], array[i, j]);
                 }
             }
@@ -145,7 +143,6 @@ public static class InversionsCounter
             }
         }
         
-        //Array.Sort(res, (x, y) => x.reverses.CompareTo(y.reverses));
         return res.OrderBy(pare => pare.reverses * array.GetLength(0) - 1 + pare.user).ToArray();
     }
 }
