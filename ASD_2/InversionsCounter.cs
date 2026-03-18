@@ -145,7 +145,7 @@ public static class InversionsCounter
             }
         }
         
-        Array.Sort(res, (x, y) => x.reverses.CompareTo(y.reverses));
-        return res;
+        //Array.Sort(res, (x, y) => x.reverses.CompareTo(y.reverses));
+        return res.OrderBy(pare => pare.reverses * array.GetLength(0) - 1 + pare.user).ToArray();
     }
 }
